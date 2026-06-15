@@ -1,4 +1,3 @@
-
 export default async function handler(req, res) {
     // Only allow POST
     if (req.method !== 'POST') {
@@ -43,7 +42,7 @@ Be warm, concise, and specific. Keep responses under 100 words unless the questi
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${process.env.GROQ_API_KEY}`
+                'Authorization': `Bearer ${process.env.groq_api_key}`
             },
             body: JSON.stringify({
                 model: 'llama3-8b-8192',
@@ -70,4 +69,3 @@ Be warm, concise, and specific. Keep responses under 100 words unless the questi
         return res.status(500).json({ error: 'Internal server error' });
     }
 }
- 
