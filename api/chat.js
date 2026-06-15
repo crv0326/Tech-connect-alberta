@@ -20,8 +20,10 @@ About Tech Connect Alberta:
 - Partners: InceptionU, Platform Calgary, Gateway, AMG Foundation
 
 Official community links (use ONLY these):
-- Discord: https://discord.gg/55UZDP7MNv (3,700+ members, has job board, resume help, event recordings)
-- All social links: https://linktr.ee/TechConnectAlberta
+- Discord: https://discord.gg/55UZDP7MNv (4,000+ members, has job board, resume help, event recordings)
+- WhatsApp: https://docs.google.com/forms/d/e/1FAIpQLScy9cdVh6OSr7VE_66uWvbdUMibOfITDwKGUnFDUT4-s2IMkA/viewform
+- LinkedIn: https://ca.linkedin.com/company/tech-connectab
+- Instagram: https://www.instagram.com/techconnectalberta
 - Contact email: albertaitprofessionals@gmail.com
 
 Pages on THIS website (tech-connect-alberta.vercel.app):
