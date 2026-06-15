@@ -46,7 +46,7 @@ Be warm, concise, and specific. Keep responses under 100 words unless the questi
                 'Authorization': `Bearer ${apiKey}`
             },
             body: JSON.stringify({
-                model: 'llama3-8b-8192',
+                model: 'llama-3.1-8b-instant',
                 max_tokens: 1000,
                 messages: [
                     { role: 'system', content: SYSTEM_PROMPT },
