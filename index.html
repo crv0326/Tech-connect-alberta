@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Connect Alberta | Powered by AMG Foundation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo-area" onclick="switchPage('home')">
+                <div class="logo-box">TC</div>
+                <span class="logo-text">Tech Connect Alberta</span>
+            </div>
+            <nav class="nav-links">
+                <button id="nav-home" class="nav-item active-nav" onclick="switchPage('home')">🏠 Home</button>
+                <div class="dropdown">
+                    <button class="dropbtn">🔧 Services <span class="arrow">▼</span></button>
+                    <div class="dropdown-content">
+                        <a href="javascript:void(0)" onclick="switchPage('consulting')">💡 Tech Consulting</a>
+                        <a href="javascript:void(0)" onclick="switchPage('find-talent')">👥 Find Talent</a>
+                        <a href="javascript:void(0)" onclick="switchPage('talent-pool')">👨‍💻 Join Talent Pool</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">💬 Community <span class="arrow">▼</span></button>
+                    <div class="dropdown-content">
+                        <a href="javascript:void(0)" onclick="switchPage('events')">📅 Our Events</a>
+                        <a href="javascript:void(0)" onclick="switchPage('volunteer')">🤝 Volunteer</a>
+                        <a href="javascript:void(0)" onclick="switchPage('projects')">⊞ Community Projects</a>
+                        <a href="javascript:void(0)" onclick="switchPage('partners')">🤝 Partners</a>
+                        <a href="javascript:void(0)" onclick="switchPage('team')">👥 Our Team</a>
+                        <a href="javascript:void(0)" onclick="switchPage('newsletter')">📰 Newsletter</a>
+                        <a href="javascript:void(0)" onclick="switchPage('mission')">🎯 Our Mission</a>
+                    </div>
+                </div>
+                <button id="nav-join" class="nav-item join-btn-style" onclick="switchPage('join')">👤 Join Us</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ============================================================
+         PAGE 1: HOME
+         ============================================================ -->
+    <main id="home-view" class="page-view animate-fade">
+
+        <!-- HERO with Live AI Agent -->
+        <section class="hero" id="home">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="badge">Community · Purpose · People First</span>
+                    <h1>Where Alberta's Tech Talent Connects and Grows</h1>
+                    <p>Tech Connect Alberta is a community-driven ecosystem linking job seekers, entrepreneurs, and tech professionals. Ask our AI assistant anything — from finding talent to understanding our services.</p>
+                    <div class="hero-actions">
+                        <button onclick="switchPage('join')" class="btn btn-dark">Join Our Community</button>
+                        <button onclick="switchPage('consulting')" class="btn btn-outline">Our Services</button>
+                    </div>
+                </div>
+
+                <!-- REAL AI AGENT WIDGET -->
+                <div class="hero-visual">
+                    <div class="ai-agent-panel">
+                        <div class="agent-header">
+                            <div class="agent-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <span class="agent-title-bar">TCA Assistant · Powered by Claude</span>
+                            <div class="agent-status-dot"></div>
+                        </div>
+                        <div class="agent-chat-window" id="chatWindow">
+                            <div class="chat-msg agent">
+                                <div class="msg-avatar agent-avatar">TC</div>
+                                <div class="msg-bubble agent-bubble">
+                                    Hi! I'm the Tech Connect Alberta assistant. I can help you find services, learn about our community, explore events, or answer questions about working in Alberta's tech ecosystem. What can I help you with?
+                                </div>
+                            </div>
+                        </div>
+                        <div class="quick-prompts" id="quickPrompts">
+                            <button class="quick-chip" onclick="sendQuick('How do I join the community?')">How to join?</button>
+                            <button class="quick-chip" onclick="sendQuick('What services does Tech Connect offer?')">Services</button>
+                            <button class="quick-chip" onclick="sendQuick('How can my nonprofit get tech help?')">Nonprofits</button>
+                            <button class="quick-chip" onclick="sendQuick('I am looking for a tech job in Alberta')">Find a job</button>
+                        </div>
+                        <div class="agent-input-row">
+                            <input 
+                                type="text" 
+                                class="agent-input" 
+                                id="agentInput" 
+                                placeholder="Ask anything about Tech Connect Alberta…"
+                                onkeydown="if(event.key==='Enter') sendMessage()"
+                            />
+                            <button class="agent-send-btn" id="sendBtn" onclick="sendMessage()">Send →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS -->
+        <section class="stats">
+            <div class="container grid-4">
+                <div class="stat-card"><h3>5,000+</h3><p>Active Community Members</p></div>
+                <div class="stat-card"><h3>500+</h3><p>Members Across Companies</p></div>
+                <div class="stat-card"><h3>10+</h3><p>Partner Organizations</p></div>
+                <div class="stat-card"><h3>200+</h3><p>Success Stories</p></div>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section class="services-section" id="services">
+            <div class="container">
+                <div class="section-title">
+                    <h2>What We Do</h2>
+                    <p>Three ways we create real impact in Alberta's tech ecosystem.</p>
+                </div>
+                <div class="grid-3">
+                    <div class="service-card" onclick="switchPage('consulting')">
+                        <div class="service-card-icon">💡</div>
+                        <h3>Tech Consulting</h3>
+                        <p>Free and low-cost tech support, website builds, and automation strategies for nonprofits and community organizations.</p>
+                        <span class="explore-link">Explore Offerings →</span>
+                    </div>
+                    <div class="service-card" onclick="switchPage('find-talent')">
+                        <div class="service-card-icon">👥</div>
+                        <h3>Find Talent</h3>
+                        <p>We connect Alberta startups and enterprises with pre-vetted, community-backed tech professionals ready to contribute.</p>
+                        <span class="explore-link">Post a Role →</span>
+                    </div>
+                    <div class="service-card" onclick="switchPage('talent-pool')">
+                        <div class="service-card-icon">🚀</div>
+                        <h3>Join Talent Pool</h3>
+                        <p>Career transitioners, graduates, and newcomers gain real visibility with local employers through our curated talent network.</p>
+                        <span class="explore-link">Submit Profile →</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LEADERSHIP & PARTNERS -->
+        <section class="ecosystem-map">
+            <div class="container grid-2-equal">
+                <div class="ecosystem-panel">
+                    <h2>Leadership & Vision</h2>
+                    <p class="panel-intro">Tech Connect operates under the strategic direction of the AMG Foundation — dedicated to removing barriers in Alberta's technology ecosystem.</p>
+                    <div class="team-list">
+                        <div class="team-item">
+                            <div class="team-avatar">👤</div>
+                            <div>
+                                <h4>Aniekan M. Greg</h4>
+                                <p class="team-role">Founder & Executive Director, AMG Foundation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ecosystem-panel partners-panel">
+                    <h2>Ecosystem Partners</h2>
+                    <p class="panel-intro">We collaborate closely with Alberta's premier innovation hubs and training accelerators to maximize community impact.</p>
+                    <div class="partner-grid">
+                        <div class="partner-logo-box">🎓 InceptionU</div>
+                        <div class="partner-logo-box">🏙️ Platform Calgary</div>
+                        <div class="partner-logo-box">🚪 Gateway</div>
+                        <div class="partner-logo-box">🌱 AMG Foundation</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- UPCOMING EVENTS TEASER -->
+        <section class="ai-preview">
+            <div class="container">
+                <div class="section-title text-center">
+                    <h2>Upcoming Events</h2>
+                    <p>Join our workshops, networking nights, and mentorship sessions across Alberta.</p>
+                </div>
+                <div class="grid-2" style="max-width: 900px; margin: 0 auto;">
+                    <div class="event-display-card">
+                        <div class="event-date-badge"><span class="month">JUN</span><span class="day">24</span></div>
+                        <div class="event-details-panel">
+                            <span class="event-tag">Workshop</span>
+                            <h3>Technical Interview Prep</h3>
+                            <p>Live coding walkthroughs, portfolio reviews, and algorithm deep-dives.</p>
+                            <span class="event-location">📍 Virtual · 6:00 PM MST</span>
+                        </div>
+                    </div>
+                    <div class="event-display-card">
+                        <div class="event-date-badge"><span class="month">JUL</span><span class="day">08</span></div>
+                        <div class="event-details-panel">
+                            <span class="event-tag">Networking</span>
+                            <h3>Summer Tech Mixer — Calgary</h3>
+                            <p>Connect with hiring managers, founders, and peers over drinks and good conversation.</p>
+                            <span class="event-location">📍 Platform Calgary · 5:30 PM MST</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center" style="margin-top: 2.5rem;">
+                    <button onclick="switchPage('events')" class="btn btn-dark">View All Events</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section class="testimonials">
+            <div class="container">
+                <div class="section-title text-center">
+                    <h2>Community Voices</h2>
+                    <p>Real outcomes from real members across Alberta.</p>
+                </div>
+                <div class="grid-3" style="margin-top: 0;">
+                    <div class="testimonial-card">
+                        <p class="quote">Tech Connect helped me land my first dev role in Calgary within six weeks of joining. The community is genuinely supportive — not just a Slack group.</p>
+                        <div class="author-info">
+                            <strong>Sarah K.</strong>
+                            <span>Junior Developer · Transitioned from Teaching</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="quote">We needed a website rebuild but couldn't afford an agency. Tech Connect's consulting team delivered something better than we imagined, at no cost to our nonprofit.</p>
+                        <div class="author-info">
+                            <strong>Marcus T.</strong>
+                            <span>Executive Director · Community Food Network</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="quote">As a newcomer to Alberta, this community gave me the contacts and confidence I needed. I made real connections with people who actually wanted to help.</p>
+                        <div class="author-info">
+                            <strong>Priya N.</strong>
+                            <span>Software Engineer · Newcomer to Canada</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============================================================
+         PAGE 2: JOIN US
+         ============================================================ -->
+    <main id="join-view" class="page-view hidden-view animate-fade">
+        <section class="join-hero">
+            <div class="container text-center">
+                <h1 class="join-main-title">Connect. Grow. Succeed.</h1>
+                <p class="join-subtitle">Access exclusive resources, connect with industry professionals, and accelerate your tech career right here in Alberta.</p>
+                <div class="grid-3">
+                    <div class="channel-card">
+                        <div class="card-meta"><span class="icon">💬</span><h4>Discord Community</h4></div>
+                        <p>Join 2,000+ tech professionals for real-time discussions, job leads, and peer support.</p>
+                        <a href="#" class="channel-btn">Join Discord ↗</a>
+                    </div>
+                    <div class="channel-card">
+                        <div class="card-meta"><span class="icon">🟢</span><h4>WhatsApp Groups</h4></div>
+                        <p>Stay in the loop with quick updates, community events, and local tech news.</p>
+                        <a href="#" class="channel-btn">Join WhatsApp ↗</a>
+                    </div>
+                    <div class="channel-card">
+                        <div class="card-meta"><span class="icon">📰</span><h4>Newsletter</h4></div>
+                        <p>Biweekly highlights: job boards, events, community wins, and tech ecosystem news.</p>
+                        <button class="channel-btn" onclick="switchPage('newsletter')">Subscribe Free</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================================
+         PAGE 3: EVENTS
+         ============================================================ -->
+    <main id="events-view" class="page-view hidden-view animate-fade">
+        <section class="events-section-page">
+            <div class="container">
+                <div class="section-title text-center">
+                    <h1 class="events-main-title">Upcoming Community Events</h1>
+                    <p>Workshops, networking nights, and mentorship sessions across Alberta — free for members.</p>
+                </div>
+                <div class="events-container-box">
+                    <div class="event-display-card">
+                        <div class="event-date-badge"><span class="month">JUN</span><span class="day">24</span></div>
+                        <div class="event-details-panel">
+                            <span class="event-tag">Workshop</span>
+                            <h3>Technical Interview Strategies & Prep</h3>
+                            <p>Data structures, live algorithm walkthroughs, and engineering portfolio reviews with industry mentors.</p>
+                            <span class="event-location">📍 Virtual (Zoom) · 6:00 PM MST</span>
+                        </div>
+                    </div>
+                    <div class="event-display-card">
+                        <div class="event-date-badge"><span class="month">JUL</span><span class="day">08</span></div>
+                        <div class="event-details-panel">
+                            <span class="event-tag">Networking</span>
+                            <h3>Summer Tech Mixer — Calgary</h3>
+                            <p>Meet founders, engineers, and hiring managers from across Alberta's tech scene. Casual and welcoming.</p>
+                            <span class="event-location">📍 Platform Calgary · 5:30 PM MST</span>
+                        </div>
+                    </div>
+                    <div class="event-display-card">
+                        <div class="event-date-badge"><span class="month">JUL</span><span class="day">22</span></div>
+                        <div class="event-details-panel">
+                            <span class="event-tag">Mentorship</span>
+                            <h3>Career Transition Office Hours</h3>
+                            <p>1-on-1 sessions with senior tech professionals to review your roadmap, resume, and strategy.</p>
+                            <span class="event-location">📍 Virtual · Bookings open July 10</span>
+                        </div>
+                    </div>
+                    <div class="event-display-card">
+                        <div class="event-date-badge"><span class="month">AUG</span><span class="day">05</span></div>
+                        <div class="event-details-panel">
+                            <span class="event-tag">Workshop</span>
+                            <h3>Intro to AI Tools for Non-Developers</h3>
+                            <p>Practical AI applications for operations, marketing, and nonprofit work — no coding required.</p>
+                            <span class="event-location">📍 InceptionU, Calgary · 6:30 PM MST</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================================
+         PAGE 4: TECH CONSULTING
+         ============================================================ -->
+    <main id="consulting-view" class="page-view hidden-view animate-fade">
+        <section class="form-hero-layout">
+            <div class="container text-center">
+                <h1 class="form-main-title">Tech Support for Nonprofits & Community Organizations</h1>
+                <p class="form-subtitle">Technology should amplify your mission — not your expenses. We offer free and low-cost tech support to nonprofits based on organizational size and budget.</p>
+                <h2 class="sub-view-title">What We Offer</h2>
+                <div class="grid-3">
+                    <div class="service-detail-card">
+                        <div class="offer-icon-box">⚙️</div>
+                        <h3>IT Helpdesk & Tech Support</h3>
+                        <p>Reliable help for everyday tech issues — devices, software, security, and day-to-day IT problems.</p>
+                    </div>
+                    <div class="service-detail-card">
+                        <div class="offer-icon-box">⚡</div>
+                        <h3>Automation Solutions</h3>
+                        <p>Save hours each week by automating manual tasks like newsletters, volunteer tracking, and donor emails.</p>
+                    </div>
+                    <div class="service-detail-card">
+                        <div class="offer-icon-box">🌐</div>
+                        <h3>Website Design & Optimization</h3>
+                        <p>We build, fix, or enhance your site to look professional, load fast, and convert visitors into supporters.</p>
+                    </div>
+                    <div class="service-detail-card">
+                        <div class="offer-icon-box">📊</div>
+                        <h3>Data & Reporting Tools</h3>
+                        <p>Dashboards and simple reporting setups that help you demonstrate impact to funders and stakeholders.</p>
+                    </div>
+                    <div class="service-detail-card">
+                        <div class="offer-icon-box">🔒</div>
+                        <h3>Cybersecurity Basics</h3>
+                        <p>Help your team adopt safe digital practices with straightforward training and tool recommendations.</p>
+                    </div>
+                    <div class="service-detail-card">
+                        <div class="offer-icon-box">🤖</div>
+                        <h3>AI Tool Onboarding</h3>
+                        <p>Practical guidance on incorporating AI assistants and tools into your nonprofit's daily workflows.</p>
+                    </div>
+                </div>
+                <div class="why-box-container">
+                    <h3>How to Get Started</h3>
+                    <p style="color: var(--muted-gray); font-size: 0.95rem; line-height: 1.65;">Reach out through our community channels or fill out the intake form below. A Tech Connect volunteer consultant will follow up within 3–5 business days.</p>
+                    <div class="alert-banner-box">📋 Services are prioritized for registered nonprofits and community-serving organizations in Alberta.</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================================
+         PAGE 5: FIND TALENT
+         ============================================================ -->
+    <main id="find-talent-view" class="page-view hidden-view animate-fade">
+        <section class="form-hero-layout">
+            <div class="container">
+                <div class="text-center">
+                    <h1 class="form-main-title">Find Your Next Tech Hire</h1>
+                    <p class="form-subtitle">We'll connect you with pre-vetted Alberta tech professionals who fit your specific requirements — fast, community-backed, and at no cost to post.</p>
+                </div>
+                <form class="intake-form-box" onsubmit="event.preventDefault(); alert('Thanks! A Tech Connect team member will be in touch within 2 business days.');">
+                    <h3 class="form-section-header">🏢 Company Information</h3>
+                    <div class="form-row-grid">
+                        <div class="input-block"><label>Company Name *</label><input type="text" placeholder="e.g., Tech Innovators Inc."></div>
+                        <div class="input-block"><label>Contact Name *</label><input type="text" placeholder="e.g., John Smith"></div>
+                    </div>
+                    <div class="form-row-grid">
+                        <div class="input-block"><label>Email Address *</label><input type="email" placeholder="e.g., hiring@company.com"></div>
+                        <div class="input-block"><label>Company Website</label><input type="url" placeholder="https://"></div>
+                    </div>
+                    <h3 class="form-section-header">💼 Role Details</h3>
+                    <div class="form-row-grid">
+                        <div class="input-block"><label>Role Title *</label><input type="text" placeholder="e.g., Full-Stack Developer"></div>
+                        <div class="input-block">
+                            <label>Employment Type *</label>
+                            <select class="form-select-style">
+                                <option>Full-Time</option>
+                                <option>Part-Time</option>
+                                <option>Contract</option>
+                                <option>Volunteer / Internship</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-block"><label>Required Skills *</label><input type="text" placeholder="e.g., React, Node.js, PostgreSQL"></div>
+                    <div class="input-block"><label>Additional Notes</label><textarea placeholder="Describe the ideal candidate, team culture, or any unique requirements…"></textarea></div>
+                    <button type="submit" class="form-submit-btn">Submit Talent Request</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================================
+         PAGE 6: TALENT POOL
+         ============================================================ -->
+    <main id="talent-pool-view" class="page-view hidden-view animate-fade">
+        <section class="form-hero-layout">
+            <div class="container">
+                <div class="text-center">
+                    <h1 class="form-main-title">Join the Talent Pool</h1>
+                    <p class="form-subtitle">Get visibility with Alberta's leading tech companies and startups. Whether you're transitioning careers, a recent grad, or a newcomer — we'll help connect you.</p>
+                </div>
+                <form class="intake-form-box" onsubmit="event.preventDefault(); alert('Profile submitted! Our team reviews applications weekly and will be in touch.');">
+                    <h3 class="form-section-header">👤 Your Information</h3>
+                    <div class="form-row-grid">
+                        <div class="input-block"><label>Full Name *</label><input type="text" placeholder="e.g., Jane Doe"></div>
+                        <div class="input-block"><label>Email Address *</label><input type="email" placeholder="e.g., jane@email.com"></div>
+                    </div>
+                    <div class="form-row-grid">
+                        <div class="input-block"><label>LinkedIn Profile</label><input type="url" placeholder="https://linkedin.com/in/"></div>
+                        <div class="input-block"><label>GitHub / Portfolio</label><input type="url" placeholder="https://"></div>
+                    </div>
+                    <h3 class="form-section-header">💻 Your Skills & Goals</h3>
+                    <div class="form-row-grid">
+                        <div class="input-block">
+                            <label>Primary Skill Area *</label>
+                            <select class="form-select-style">
+                                <option>Frontend Development</option>
+                                <option>Backend Development</option>
+                                <option>Full-Stack Development</option>
+                                <option>Data Science / ML</option>
+                                <option>DevOps / Cloud</option>
+                                <option>UX/UI Design</option>
+                                <option>IT Support / Cybersecurity</option>
+                                <option>Project Management</option>
+                            </select>
+                        </div>
+                        <div class="input-block">
+                            <label>Experience Level *</label>
+                            <select class="form-select-style">
+                                <option>Student / New Graduate</option>
+                                <option>Career Transitioner (0–2 yrs)</option>
+                                <option>Junior (1–3 yrs)</option>
+                                <option>Mid-Level (3–6 yrs)</option>
+                                <option>Senior (6+ yrs)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-block"><label>Key Technologies *</label><input type="text" placeholder="e.g., Python, React, AWS, SQL…"></div>
+                    <div class="input-block"><label>Tell us about yourself *</label><textarea placeholder="Brief intro: your background, what you're looking for, and what makes you a great community member…"></textarea></div>
+                    <button type="submit" class="form-submit-btn">Submit My Profile</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================================
+         PAGE 7: MISSION
+         ============================================================ -->
+    <main id="mission-view" class="page-view hidden-view animate-fade">
+        <section class="pillars">
+            <div class="container">
+                <div class="section-title text-center">
+                    <h1 class="form-main-title">Our Mission</h1>
+                    <p class="form-subtitle">We're cultivating an ecosystem where innovation thrives through collaboration, mentorship, and shared growth — with equity and access at the center.</p>
+                </div>
+                <div class="grid-2">
+                    <div class="pillar-card"><h3>🤝 Community First</h3><p>We believe in the power of mutual support. Every program, event, and service is designed to uplift the whole community — not just a select few.</p></div>
+                    <div class="pillar-card"><h3>🔗 Meaningful Connections</h3><p>We facilitate genuine relationships between talent, companies, and entrepreneurs — not transactional networking, but real, lasting professional bonds.</p></div>
+                    <div class="pillar-card"><h3>🚪 Breaking Barriers</h3><p>Whether you're a newcomer, a career changer, or a first-generation tech professional, Tech Connect removes the gatekeeping that holds capable people back.</p></div>
+                    <div class="pillar-card"><h3>🌱 Sustainable Impact</h3><p>Backed by the AMG Foundation, we're building long-term infrastructure for Alberta's tech ecosystem — not a pop-up community, but a lasting institution.</p></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================================
+         PAGE 8: VOLUNTEER
+         ============================================================ -->
+    <main id="volunteer-view" class="page-view hidden-view animate-fade">
+        <section class="form-hero-layout">
+            <div class="container">
+                <div class="text-center">
+                    <h1 class="form-main-title">Volunteer Registration</h1>
+                    <p class="form-subtitle">Give back to Alberta's tech community. Share your expertise, mentor career transitioners, or support tech initiatives for local nonprofits.</p>
+                </div>
+                <form class="intake-form-box" onsubmit="event.preventDefault(); alert('Thank you! Our volunteer coordinator will reach out within a week.');">
+                    <h3 class="form-section-header">👤 Contact Information</h3>
+                    <div class="form-row-grid">
+                        <div class="input-block"><label>Full Name *</label><input type="text" placeholder="e.g., Jane Doe"></div>
+                        <div class="input-block"><label>Email Address *</label><input type="email" placeholder="e.g., jane@email.com"></div>
+                    </div>
+                    <h3 class="form-section-header">🛠️ How You'd Like to Help</h3>
+                    <div class="input-block">
+                        <label>Area of Expertise *</label>
+                        <select class="form-select-style">
+                            <option>Software Engineering / Web Development</option>
+                            <option>Data Science / AI & ML</option>
+                            <option>IT Support & Cybersecurity</option>
+                            <option>UI/UX Design</option>
+                            <option>Project / Product Management</option>
+                            <option>Mentorship & Career Coaching</option>
+                            <option>Marketing & Communications</option>
+                        </select>
+                    </div>
+                    <div class="input-block">
+                        <label>Volunteer Role Interest *</label>
+                        <select class="form-select-style">
+                            <option>1:1 Mentorship (monthly check-ins)</option>
+                            <option>Workshop Facilitator</option>
+                            <option>Nonprofit Tech Project Support</option>
+                            <option>Event Help & Coordination</option>
+                            <option>Resume / Portfolio Reviewer</option>
+                        </select>
+                    </div>
+                    <div class="input-block"><label>Tell us about yourself</label><textarea placeholder="A brief intro about your background and why you'd like to get involved…"></textarea></div>
+                    <button type="submit" class="form-submit-btn">Submit Registration</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================================
+         PAGE 9: COMMUNITY PROJECTS
+         ============================================================ -->
+    <main id="projects-view" class="page-view hidden-view animate-fade">
+        <section class="pillars">
+            <div class="container">
+                <div class="section-title text-center">
+                    <h1 class="form-main-title">Community Projects</h1>
+                    <p class="form-subtitle">Live initiatives our network is building and deploying across Alberta right now. Want to contribute? Join as a volunteer.</p>
+                </div>
+                <div class="grid-2">
+                    <div class="pillar-card">
+                        <h3>🌐 Nonprofit Website Rebuilds</h3>
+                        <p>Custom, responsive website builds for under-resourced community organizations across Alberta — delivered by our volunteer developer network at no cost.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <h3>🎙️ Academic Podcast Network</h3>
+                        <p>Researching, scripting, and publishing tech ecosystem highlights and career success story roundtables that spotlight Alberta voices in tech.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <h3>🤖 AI for Nonprofits Pilot</h3>
+                        <p>Helping 10 Alberta nonprofits integrate practical AI tools into their operations — from automated reporting to donor communication workflows.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <h3>📚 Tech Career Curriculum</h3>
+                        <p>An open-access learning path and resource hub built specifically for Alberta career transitioners entering the tech industry for the first time.</p>
+                    </div>
+                </div>
+                <div class="text-center" style="margin-top: 3rem;">
+                    <button onclick="switchPage('volunteer')" class="btn btn-dark">Get Involved as a Volunteer</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================================
+         PAGE 10: PARTNERS
+         ============================================================ -->
+    <main id="partners-view" class="page-view hidden-view animate-fade">
+        <section class="ecosystem-map" style="min-height: 80vh;">
+            <div class="container">
+                <div class="section-title text-center">
+                    <h1 class="form-main-title">Ecosystem Partners</h1>
+                    <p class="form-subtitle">We work alongside Alberta's leading innovation hubs, training accelerators, and foundations to build a stronger, more inclusive tech community.</p>
+                </div>
+                <div class="grid-4" style="margin-top: 3rem;">
+                    <div class="partner-logo-box" style="padding: 2rem 1.5rem;">🌱<br><strong>AMG Foundation</strong><br><span style="font-size:0.78rem; color: var(--muted-gray); font-weight: 400;">Parent organization & legal umbrella</span></div>
+                    <div class="partner-logo-box" style="padding: 2rem 1.5rem;">🎓<br><strong>InceptionU</strong><br><span style="font-size:0.78rem; color: var(--muted-gray); font-weight: 400;">Tech education & bootcamp partner</span></div>
+                    <div class="partner-logo-box" style="padding: 2rem 1.5rem;">🏙️<br><strong>Platform Calgary</strong><br><span style="font-size:0.78rem; color: var(--muted-gray); font-weight: 400;">Startup ecosystem & co-working hub</span></div>
+                    <div class="partner-logo-box" style="padding: 2rem 1.5rem;">🚪<br><strong>Gateway</strong><br><span style="font-size:0.78rem; color: var(--muted-gray); font-weight: 400;">Newcomer integration partner</span></div>
+                </div>
+                <div class="why-box-container text-center">
+                    <h3>Interested in Partnering?</h3>
+                    <p style="color: var(--muted-gray); font-size: 0.95rem; line-height: 1.65; margin-top: 0.75rem;">If your organization shares our mission of building a more connected, equitable tech ecosystem in Alberta, we'd love to connect.</p>
+                    <a href="mailto:hello@techconnectalberta.ca" class="btn btn-dark" style="display: inline-block; margin-top: 1.5rem;">Get in Touch</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================================
+         PAGE 11: TEAM
+         ============================================================ -->
+    <main id="team-view" class="page-view hidden-view animate-fade">
+        <section class="pillars">
+            <div class="container">
+                <div class="section-title text-center">
+                    <h1 class="form-main-title">Our Team</h1>
+                    <p class="form-subtitle">The dedicated people managing Tech Connect Alberta under the AMG Foundation.</p>
+                </div>
+                <div class="team-list" style="max-width: 680px; margin: 3rem auto 0;">
+                    <div class="team-item">
+                        <div class="team-avatar" style="width: 56px; height: 56px; font-size: 1.75rem;">👤</div>
+                        <div>
+                            <h4>Aniekan M. Greg</h4>
+                            <p class="team-role">Founder & Executive Director, AMG Foundation</p>
+                            <p style="font-size: 0.88rem; color: var(--muted-gray); margin-top: 0.25rem;">Visionary behind Tech Connect Alberta, building bridges between talent, opportunity, and community across the province.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center" style="margin-top: 3rem;">
+                    <p style="color: var(--muted-gray); font-size: 0.95rem;">Want to help lead the community?</p>
+                    <button onclick="switchPage('volunteer')" class="btn btn-dark" style="margin-top: 1rem;">Volunteer with Us</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================================
+         PAGE 12: NEWSLETTER
+         ============================================================ -->
+    <main id="newsletter-view" class="page-view hidden-view animate-fade">
+        <section class="form-hero-layout">
+            <div class="container text-center">
+                <h1 class="form-main-title">Tech Connect Newsletter</h1>
+                <p class="form-subtitle">Biweekly updates on local hiring boards, upcoming workshops, community wins, and the latest from Alberta's tech ecosystem — delivered to your inbox.</p>
+                <form class="intake-form-box" style="max-width: 520px;" onsubmit="event.preventDefault(); this.innerHTML='<div style=\'padding: 2rem; text-align: center;\'><div style=\'font-size: 2.5rem;\'>🎉</div><h3 style=\'margin-top: 1rem;\'>You\'re on the list!</h3><p style=\'color: var(--muted-gray); margin-top: 0.5rem;\'>Watch your inbox for the next edition.</p></div>'">
+                    <div class="input-block">
+                        <label>First Name</label>
+                        <input type="text" placeholder="e.g., Jane">
+                    </div>
+                    <div class="input-block">
+                        <label>Email Address *</label>
+                        <input type="email" placeholder="your@email.com" required>
+                    </div>
+                    <div class="input-block">
+                        <label>What describes you best?</label>
+                        <select class="form-select-style">
+                            <option>Tech Job Seeker</option>
+                            <option>Employer / Hiring Manager</option>
+                            <option>Nonprofit / Community Organization</option>
+                            <option>Student or Career Transitioner</option>
+                            <option>General Community Member</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="form-submit-btn">Subscribe to the Newsletter</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-inner">
+            <p>&copy; 2026 Tech Connect Alberta · Powered by AMG Foundation</p>
+            <div class="footer-links">
+                <a href="javascript:void(0)" onclick="switchPage('mission')">Mission</a>
+                <a href="javascript:void(0)" onclick="switchPage('partners')">Partners</a>
+                <a href="javascript:void(0)" onclick="switchPage('newsletter')">Newsletter</a>
+                <a href="mailto:hello@techconnectalberta.ca">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js" defer></script>
+</body>
+</html>
