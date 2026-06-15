@@ -1,3 +1,4 @@
+
 export default async function handler(req, res) {
     // Only allow POST
     if (req.method !== 'POST') {
@@ -38,28 +39,29 @@ How to volunteer: Submit via the Volunteer Registration page. Roles include ment
 Be warm, concise, and specific. Keep responses under 100 words unless the question truly requires more detail. Do not make up specific contact details — direct to the website pages.`;
  
     try {
-        const response = await fetch('https://api.anthropic.com/v1/messages', {
+        const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'x-api-key': process.env.ANTHROPIC_API_KEY,
-                'anthropic-version': '2023-06-01'
+                'Authorization': `Bearer ${process.env.GROQ_API_KEY}`
             },
             body: JSON.stringify({
-                model: 'claude-sonnet-4-6',
+                model: 'llama3-8b-8192',
                 max_tokens: 1000,
-                system: SYSTEM_PROMPT,
-                messages
+                messages: [
+                    { role: 'system', content: SYSTEM_PROMPT },
+                    ...messages
+                ]
             })
         });
  
         if (!response.ok) {
             const error = await response.json();
-            return res.status(response.status).json({ error: error.error?.message || 'Anthropic API error' });
+            return res.status(response.status).json({ error: error.error?.message || 'Groq API error' });
         }
  
         const data = await response.json();
-        const reply = data.content?.[0]?.text || "Sorry, I couldn't generate a response.";
+        const reply = data.choices?.[0]?.message?.content || "Sorry, I couldn't generate a response.";
  
         return res.status(200).json({ reply });
  
@@ -68,3 +70,4 @@ Be warm, concise, and specific. Keep responses under 100 words unless the questi
         return res.status(500).json({ error: 'Internal server error' });
     }
 }
+ 
