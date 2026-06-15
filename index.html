@@ -274,9 +274,55 @@
                         <button class="channel-btn" onclick="switchPage('volunteer')">Register as Volunteer</button>
                     </div>
                     <div class="channel-card">
-                        <div class="card-meta"><span class="icon">🌐</span><h4>All Our Links</h4></div>
-                        <p>Find all our community channels, programs, and resources in one place on our Linktree.</p>
-                        <a href="https://linktr.ee/TechConnectAlberta" target="_blank" class="channel-btn">Visit Linktree ↗</a>
+                        <div class="card-meta"><span class="icon">📸</span><h4>Instagram</h4></div>
+                        <p>Follow us on Instagram for community highlights, event recaps, and tech inspiration.</p>
+                        <a href="https://www.instagram.com/techconnectalberta/" target="_blank" class="channel-btn">Follow on Instagram ↗</a>
+                    </div>
+                </div>
+
+                <!-- FEEDBACK SECTION -->
+                <div style="max-width: 700px; margin: 4rem auto 0;">
+                    <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; color: #c44d38;">Share Your Feedback</h2>
+                    <p style="color: var(--muted-gray); margin-bottom: 2rem;">Help us improve Tech Connect Alberta. Your experience and suggestions matter to us.</p>
+                    <form class="intake-form-box" style="text-align: left;" onsubmit="submitFeedback(event)">
+                        <div class="form-row-grid">
+                            <div class="input-block">
+                                <label>Your Name</label>
+                                <input type="text" id="feedbackName" placeholder="e.g. Jane Doe">
+                            </div>
+                            <div class="input-block">
+                                <label>Your Role in the Community</label>
+                                <select class="form-select-style" id="feedbackRole">
+                                    <option>Community Member</option>
+                                    <option>Job Seeker</option>
+                                    <option>Employer / Hiring Manager</option>
+                                    <option>Volunteer</option>
+                                    <option>Nonprofit Partner</option>
+                                    <option>Just Visiting</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-block">
+                            <label>Overall Rating *</label>
+                            <div id="starRating" style="display: flex; gap: 0.5rem; font-size: 2rem; cursor: pointer; margin-top: 0.25rem;">
+                                <span class="star" data-val="1" onclick="setRating(1)">☆</span>
+                                <span class="star" data-val="2" onclick="setRating(2)">☆</span>
+                                <span class="star" data-val="3" onclick="setRating(3)">☆</span>
+                                <span class="star" data-val="4" onclick="setRating(4)">☆</span>
+                                <span class="star" data-val="5" onclick="setRating(5)">☆</span>
+                            </div>
+                        </div>
+                        <div class="input-block">
+                            <label>Your Feedback *</label>
+                            <textarea id="feedbackText" placeholder="Tell us about your experience with Tech Connect Alberta, what you love, or what we can improve…"></textarea>
+                        </div>
+                        <button type="submit" class="form-submit-btn">Submit Feedback</button>
+                    </form>
+
+                    <!-- REVIEWS DISPLAY -->
+                    <div id="reviewsSection" style="margin-top: 3rem;">
+                        <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; color: #0f172a;">Community Reviews</h3>
+                        <div id="reviewsList" style="display: flex; flex-direction: column; gap: 1rem;"></div>
                     </div>
                 </div>
             </div>
