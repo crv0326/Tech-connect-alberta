@@ -35,6 +35,7 @@ Pages on THIS website (tech-connect-alberta.vercel.app):
 - Events: upcoming workshops, networking nights, mentorship sessions (all free)
 - Volunteer: register to mentor, facilitate workshops, or support nonprofit tech projects
 - Community Projects: nonprofit website rebuilds, AI for nonprofits pilot, tech career curriculum
+- Our Team: Page is under development
 - Partners: InceptionU, Platform Calgary, Gateway, AMG Foundation
 - Newsletter: subscribe for biweekly updates on jobs, events, and community news
 - Mission: community first, breaking barriers, sustainable impact
