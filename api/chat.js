@@ -15,7 +15,7 @@ export default async function handler(req, res) {
 
 About Tech Connect Alberta:
 - A community-driven social enterprise connecting tech job seekers, employers, entrepreneurs, and volunteers across Alberta
-- Operated under the AMG Foundation, founded by Aniekan M. Greg
+- Operated under the AMG Foundation
 - Nearly 3,000 members across WhatsApp and Discord
 - Partners: InceptionU, Platform Calgary, Gateway, AMG Foundation
 
