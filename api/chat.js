@@ -36,7 +36,6 @@ Pages on THIS website (tech-connect-alberta.vercel.app):
 - Volunteer: register to mentor, facilitate workshops, or support nonprofit tech projects
 - Community Projects: nonprofit website rebuilds, AI for nonprofits pilot, tech career curriculum
 - Partners: InceptionU, Platform Calgary, Gateway, AMG Foundation
-- Our Team: Aniekan M. Greg — Founder & Executive Director
 - Newsletter: subscribe for biweekly updates on jobs, events, and community news
 - Mission: community first, breaking barriers, sustainable impact
 
