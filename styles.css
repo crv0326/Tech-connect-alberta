@@ -1,4 +1,4 @@
-/* =================================================================
+/* 
    styles.css — Tech Connect Alberta
    
    This file styles the entire website. It's organized in sections
@@ -23,7 +23,7 @@
    16. Mission/Projects — the pillar cards used on mission + projects pages
    17. Footer       — bottom bar with links
    18. Responsive   — mobile layout overrides (under 968px screen width)
-   ================================================================= */
+  */
 /* All our brand colours and fonts live here as variables.
    Change a value once here and it updates everywhere on the site. */
 :root {
@@ -57,13 +57,13 @@ h3 { font-size: 1.35rem; font-weight: 600; color: #0f172a; }
 .text-center { text-align: center; }
 .text-left { text-align: left; }
 
-/* =================================================================
+/* 
    SPA VIEW SYSTEM
    Each "page" is a <main> element. By default all are visible,
    but switchPage() in script.js adds .hidden-view to everything
    except the active page. The !important makes sure nothing
    overrides the hide (even inline styles).
-   ================================================================= */
+    */
 .page-view { display: block; }
 .hidden-view { display: none !important; }
 
@@ -74,9 +74,9 @@ h3 { font-size: 1.35rem; font-weight: 600; color: #0f172a; }
 }
 .animate-fade { animation: fadeIn 0.35s ease forwards; }
 
-/* =================================================================
+/* 
    NAVIGATION
-   ================================================================= */
+     */
 .navbar { 
     background-color: var(--brand-orange); 
     color: #fff; 
@@ -144,17 +144,17 @@ h3 { font-size: 1.35rem; font-weight: 600; color: #0f172a; }
 .dropdown-content a:hover { background-color: var(--brand-orange-light); color: var(--brand-orange); }
 .dropdown:hover .dropdown-content { display: block; }
 
-/* =================================================================
+/*  
    GRIDS
-   ================================================================= */
+     */
 .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; }
 .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
 .grid-2-equal { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
 
-/* =================================================================
+/*  
    HERO — Dark, cinematic
-   ================================================================= */
+     */
 .hero { 
     background: var(--hero-bg); 
     padding: 5rem 0 4rem;
@@ -238,9 +238,9 @@ h3 { font-size: 1.35rem; font-weight: 600; color: #0f172a; }
 .btn-outline:hover { border-color: rgba(255,255,255,0.5); color: #fff; background: rgba(255,255,255,0.05); }
 .btn-sm { font-size: 0.85rem; padding: 0.6rem 1.25rem; }
 
-/* =================================================================
+/*  
    HERO AI AGENT PANEL
-   ================================================================= */
+     */
 .hero-visual { position: relative; }
 
 .ai-agent-panel {
@@ -394,9 +394,9 @@ h3 { font-size: 1.35rem; font-weight: 600; color: #0f172a; }
     background: rgba(209,91,71,0.08);
 }
 
-/* =================================================================
+/*  
    STATS BAR
-   ================================================================= */
+     */
 .stats { 
     padding: 3.5rem 0; 
     background: #ffffff;
@@ -415,9 +415,9 @@ h3 { font-size: 1.35rem; font-weight: 600; color: #0f172a; }
 }
 .stat-card p { color: var(--muted-gray); font-size: 0.9rem; font-weight: 500; }
 
-/* =================================================================
+/*  
    SERVICES SECTION
-   ================================================================= */
+     */
 .services-section { padding: 5rem 0; background: var(--light-bg); }
 .section-title { margin-bottom: 2.5rem; }
 .section-title h2 { margin-bottom: 0.5rem; }
@@ -445,9 +445,9 @@ h3 { font-size: 1.35rem; font-weight: 600; color: #0f172a; }
 .service-card p { color: var(--muted-gray); font-size: 0.93rem; line-height: 1.6; flex-grow: 1; }
 .explore-link { color: var(--brand-orange); font-weight: 600; font-size: 0.9rem; }
 
-/* =================================================================
+/*  
    ECOSYSTEM / PARTNERS
-   ================================================================= */
+     */
 .ecosystem-map { padding: 5rem 0; background: #fff; }
 .ecosystem-panel { padding: 2.5rem; background: var(--light-bg); border-radius: 16px; border: 1px solid var(--border-color); }
 .panel-intro { color: var(--muted-gray); font-size: 0.95rem; line-height: 1.65; margin: 0.75rem 0 1.5rem; }
@@ -476,9 +476,9 @@ h3 { font-size: 1.35rem; font-weight: 600; color: #0f172a; }
 .partner-logo-box:hover { border-color: var(--brand-orange); color: var(--brand-orange); }
 .partners-panel { background: var(--light-bg); }
 
-/* =================================================================
+/*  
    AI TOOLS PREVIEW
-   ================================================================= */
+     */
 .ai-preview { padding: 5rem 0; background: var(--light-bg); }
 .interactive-card { 
     background: #fff; border: 1px solid var(--border-color); 
@@ -488,9 +488,9 @@ h3 { font-size: 1.35rem; font-weight: 600; color: #0f172a; }
 .interactive-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.07); transform: translateY(-2px); }
 .card-icon { font-size: 2rem; }
 
-/* =================================================================
+/*  
    TESTIMONIALS
-   ================================================================= */
+     */
 .testimonials { padding: 5rem 0; background: #fffbf9; border-top: 1px solid var(--border-color); }
 .testimonial-card { 
     background: #fff; border: 1px solid var(--border-color); 
@@ -503,9 +503,9 @@ h3 { font-size: 1.35rem; font-weight: 600; color: #0f172a; }
 .author-info strong { font-size: 0.93rem; color: var(--dark-text); display: block; }
 .author-info span { font-size: 0.83rem; color: var(--brand-orange); font-weight: 500; }
 
-/* =================================================================
+/*  
    JOIN PAGE
-   ================================================================= */
+     */
 .join-hero { padding: 6rem 0; background: linear-gradient(to bottom, #fff7f5, #fff); min-height: 85vh; }
 .join-main-title { font-size: 3rem; color: #c44d38; text-align: center; margin-bottom: 1rem; font-weight: 800; letter-spacing: -0.02em; }
 .join-subtitle { font-size: 1.1rem; color: var(--muted-gray); max-width: 650px; margin: 0 auto 3.5rem; text-align: center; line-height: 1.65; }
@@ -527,9 +527,9 @@ h3 { font-size: 1.35rem; font-weight: 600; color: #0f172a; }
 }
 .channel-btn:hover { background: var(--brand-orange-deep); }
 
-/* =================================================================
+/*  
    EVENTS
-   ================================================================= */
+     */
 .events-section-page { padding: 6rem 0; min-height: 85vh; background: var(--light-bg); }
 .events-main-title { color: #c44d38; font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em; }
 .events-container-box { max-width: 800px; margin: 3rem auto 0; display: flex; flex-direction: column; gap: 1.25rem; }
@@ -558,9 +558,9 @@ h3 { font-size: 1.35rem; font-weight: 600; color: #0f172a; }
 .event-details-panel p { color: var(--muted-gray); font-size: 0.9rem; line-height: 1.5; }
 .event-location { font-size: 0.88rem; color: var(--brand-orange); font-weight: 600; }
 
-/* =================================================================
+/*  
    FORMS & SUB-PAGES
-   ================================================================= */
+     */
 .form-hero-layout { padding: 5.5rem 0; background: #fff; min-height: 85vh; }
 .form-main-title { font-size: 2.5rem; color: #c44d38; font-weight: 800; margin-bottom: 1.25rem; line-height: 1.15; letter-spacing: -0.02em; }
 .form-subtitle { font-size: 1.05rem; color: var(--muted-gray); max-width: 800px; margin: 0 auto 3.5rem; line-height: 1.65; }
@@ -622,9 +622,9 @@ h3 { font-size: 1.35rem; font-weight: 600; color: #0f172a; }
     border-radius: 4px; font-weight: 600; font-size: 0.92rem;
 }
 
-/* =================================================================
+/*  
    PILLARS / MISSION / PROJECTS
-   ================================================================= */
+     */
 .pillars { padding: 5.5rem 0; background: #fff; min-height: 80vh; }
 .pillar-card { 
     background: var(--light-bg); border: 1px solid var(--border-color); 
@@ -634,13 +634,13 @@ h3 { font-size: 1.35rem; font-weight: 600; color: #0f172a; }
 .pillar-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.6rem; }
 .pillar-card p { color: var(--muted-gray); font-size: 0.93rem; line-height: 1.6; }
 
-/* =================================================================
+/*  
    NEWSLETTER
-   ================================================================= */
+     */
 
-/* =================================================================
+/*  
    FOOTER
-   ================================================================= */
+     */
 footer { 
     border-top: 1px solid var(--border-color); padding: 2.5rem 0; 
     text-align: center; color: var(--muted-gray); font-size: 0.88rem; 
@@ -651,12 +651,12 @@ footer {
 .footer-links a { color: var(--muted-gray); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
 .footer-links a:hover { color: var(--brand-orange); }
 
-/* =================================================================
+/*  
    RESPONSIVE — Mobile layout (screens narrower than 968px)
    On small screens: all multi-column grids collapse to 1 column,
    the nav links are hidden (no mobile menu yet — could add a
    hamburger button later), and some padding is reduced.
-   ================================================================= */
+     */
 @media (max-width: 968px) {
     .grid-4, .grid-3, .grid-2, .grid-2-equal, .hero-container, .form-row-grid { 
         grid-template-columns: 1fr; gap: 1.25rem; 
