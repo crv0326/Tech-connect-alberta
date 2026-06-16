@@ -1,4 +1,4 @@
-// ============================================================
+ 
 // api/chat.js — Vercel Serverless Function (our AI backend)
 //
 // This file runs on Vercel's servers, NOT in the browser.
@@ -8,7 +8,7 @@
 // When the chat widget sends a message, it hits this endpoint.
 // We take that message, add our system prompt (the AI's personality
 // and rules), send it to Groq, and return the reply.
-// ============================================================
+ 
 
 export default async function handler(req, res) {
 
