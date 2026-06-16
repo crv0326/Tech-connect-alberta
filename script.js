@@ -1,4 +1,4 @@
-// ============================================================
+
 // Tech Connect Alberta — script.js
 // This file controls two main things:
 //   1. Switching between pages (we built this as a single HTML
@@ -6,7 +6,7 @@
 //      different sections — that's what switchPage() does)
 //   2. The AI chat widget on the homepage — sends messages to
 //      our backend (/api/chat.js) which talks to Groq
-// ============================================================
+
 
 // Wait until the entire page has loaded before running anything
 window.addEventListener('DOMContentLoaded', () => {
@@ -14,12 +14,12 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// ============================================================
+
 // PAGE SWITCHER
 // Because everything lives in one HTML file, we fake navigation
 // by hiding all sections and only showing the one the user
 // clicked on. Each "page" is a <main> tag with a unique ID.
-// ============================================================
+
 function switchPage(pageId) {
 
     // Every page section in the app, mapped by their ID
@@ -71,7 +71,7 @@ function switchPage(pageId) {
 }
 
 
-// ============================================================
+
 // AI CHAT WIDGET
 // The chat widget on the homepage talks to our own backend
 // at /api/chat.js — we never call Groq directly from here
@@ -80,7 +80,7 @@ function switchPage(pageId) {
 //
 // We keep the full conversation history in memory so the AI
 // remembers what was said earlier in the same session.
-// ============================================================
+
 
 // Stores the full back-and-forth conversation so the AI has context
 const conversationHistory = [];
@@ -217,13 +217,13 @@ function sendQuick(message) {
 }
 
 
-// ============================================================
+
 // FEEDBACK & REVIEWS SYSTEM
 // Users can leave a star rating + written review on the Join Us
 // page. Reviews are saved to localStorage so they persist between
 // visits on the same device. We pre-load 3 starter reviews so the
 // section doesn't look empty on a brand new visitor's screen.
-// ============================================================
+
 
 // Tracks which star the user has selected (1–5), starts at 0 (none)
 let currentRating = 0;
