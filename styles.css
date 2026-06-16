@@ -1,6 +1,31 @@
 /* =================================================================
-   TECH CONNECT ALBERTA — Improved Design System
+   styles.css — Tech Connect Alberta
+   
+   This file styles the entire website. It's organized in sections
+   so you can find things easily. The general order is:
+   
+   1. CSS Variables  — our brand colours and fonts in one place
+                       so changing #d15b47 here updates everything
+   2. Reset & Base  — clears browser defaults, sets font/body
+   3. SPA System    — shows/hides pages (works with switchPage() in script.js)
+   4. Navigation    — the sticky top bar and dropdown menus
+   5. Grid Layouts  — reusable column systems used across all pages
+   6. Hero Section  — the dark banner on the homepage with the AI chat
+   7. AI Chat Panel — styles for the chat widget bubbles, input, typing dots
+   8. Stats Bar     — the 4 numbers below the hero (5000+ members etc.)
+   9. Service Cards — the clickable cards on the homepage
+   10. Team/Partners — the two-column section below services
+   11. AI Tools     — the events teaser section
+   12. Testimonials — the 3 quote cards
+   13. Join Page    — the social media channel cards
+   14. Events Page  — the event date badge + card layout
+   15. Forms        — shared styles for all intake forms (talent, volunteer etc.)
+   16. Mission/Projects — the pillar cards used on mission + projects pages
+   17. Footer       — bottom bar with links
+   18. Responsive   — mobile layout overrides (under 968px screen width)
    ================================================================= */
+/* All our brand colours and fonts live here as variables.
+   Change a value once here and it updates everywhere on the site. */
 :root {
     --brand-orange: #d15b47;
     --brand-orange-deep: #b04432;
@@ -34,10 +59,15 @@ h3 { font-size: 1.35rem; font-weight: 600; color: #0f172a; }
 
 /* =================================================================
    SPA VIEW SYSTEM
+   Each "page" is a <main> element. By default all are visible,
+   but switchPage() in script.js adds .hidden-view to everything
+   except the active page. The !important makes sure nothing
+   overrides the hide (even inline styles).
    ================================================================= */
 .page-view { display: block; }
 .hidden-view { display: none !important; }
 
+/* Subtle slide-up fade — plays every time a new page is opened */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(12px); }
     to { opacity: 1; transform: translateY(0); }
@@ -95,7 +125,9 @@ h3 { font-size: 1.35rem; font-weight: 600; color: #0f172a; }
     box-shadow: 0 8px 30px rgba(0,0,0,0.12); border-radius: 10px;
     top: 100%; left: 0; padding: 8px 0 6px; border: 1px solid var(--border-color);
 }
-/* Pseudo-element bridge so mouse can travel from button into menu without losing hover */
+/* This invisible block sits between the button and the dropdown menu.
+   Without it, moving your mouse from the button into the menu crosses
+   a tiny gap that kills the hover state and closes the menu instantly. */
 .dropdown-content::before {
     content: '';
     position: absolute;
@@ -130,6 +162,8 @@ h3 { font-size: 1.35rem; font-weight: 600; color: #0f172a; }
     overflow: hidden;
 }
 
+/* Decorative orange glow in the top-right corner of the hero —
+   purely visual, doesn't block any clicks (pointer-events: none) */
 .hero::before {
     content: '';
     position: absolute;
@@ -305,6 +339,8 @@ h3 { font-size: 1.35rem; font-weight: 600; color: #0f172a; }
     background: #1e2028; border-radius: 12px; border-bottom-left-radius: 3px;
     width: fit-content; border: 1px solid rgba(255,255,255,0.05);
 }
+/* The three dots that bounce up and down while the AI is thinking.
+   Each dot is delayed slightly so they wave rather than jump together. */
 .typing-indicator span {
     width: 6px; height: 6px; background: #64748b; border-radius: 50%;
     animation: typing-bounce 1.2s ease infinite;
@@ -616,7 +652,10 @@ footer {
 .footer-links a:hover { color: var(--brand-orange); }
 
 /* =================================================================
-   RESPONSIVE
+   RESPONSIVE — Mobile layout (screens narrower than 968px)
+   On small screens: all multi-column grids collapse to 1 column,
+   the nav links are hidden (no mobile menu yet — could add a
+   hamburger button later), and some padding is reduced.
    ================================================================= */
 @media (max-width: 968px) {
     .grid-4, .grid-3, .grid-2, .grid-2-equal, .hero-container, .form-row-grid { 
