@@ -1,5 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--
+  index.html — Tech Connect Alberta
+  
+  This is a Single Page Application (SPA) — meaning the entire website
+  is one HTML file. Instead of loading new pages, we use JavaScript
+  (script.js > switchPage) to show and hide different <main> sections.
+  
+  Page order:
+    1.  Home        — hero with AI chat, stats, services, events teaser, testimonials
+    2.  Join Us     — social media links + feedback/reviews section
+    3.  Events      — list of upcoming events with date badges
+    4.  Consulting  — tech help services for nonprofits
+    5.  Find Talent — form for employers looking to hire
+    6.  Talent Pool — form for job seekers to submit their profile
+    7.  Mission     — our values and pillars
+    8.  Volunteer   — registration form for volunteers
+    9.  Projects    — active community projects
+    10. Partners    — ecosystem partner organizations
+    11. Team        — placeholder (page under construction)
+    12. Newsletter  — email subscription form
+-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +32,13 @@
 </head>
 <body>
 
-    <!-- NAVBAR -->
+    <!-- ============================================================
+         NAVBAR
+         Sticky top bar — stays visible as you scroll.
+         The logo click goes home. "Services" and "Community" are
+         dropdown menus. "Join Us" is a highlighted button on the right.
+         The active page's nav button gets highlighted via active-nav class.
+         ============================================================ -->
     <header class="navbar">
         <div class="container nav-container">
             <div class="logo-area" onclick="switchPage('home')">
@@ -49,7 +76,13 @@
          ============================================================ -->
     <main id="home-view" class="page-view animate-fade">
 
-        <!-- HERO with Live AI Agent -->
+        <!-- ============================================================
+             HERO SECTION
+             Dark banner split into two columns:
+             LEFT  — headline, tagline, and two CTA buttons
+             RIGHT — the live AI chat widget (powered by Groq via /api/chat.js)
+             The quick-prompt chips disappear after the first real message.
+             ============================================================ -->
         <section class="hero" id="home">
             <div class="container hero-container">
                 <div class="hero-content">
@@ -101,7 +134,7 @@
             </div>
         </section>
 
-        <!-- STATS -->
+        <!-- STATS BAR: four community numbers displayed in a 4-column grid -->
         <section class="stats">
             <div class="container grid-4">
                 <div class="stat-card"><h3>5,000+</h3><p>Active Community Members</p></div>
@@ -111,7 +144,7 @@
             </div>
         </section>
 
-        <!-- SERVICES -->
+        <!-- SERVICES: three clickable cards linking to the main service pages -->
         <section class="services-section" id="services">
             <div class="container">
                 <div class="section-title">
@@ -726,7 +759,12 @@
         </section>
     </main>
 
-    <!-- FOOTER -->
+    <!-- ============================================================
+         FOOTER
+         Simple bottom bar with copyright and quick links.
+         Discord and LinkedIn open in a new tab (target="_blank").
+         Contact opens the user's email client via mailto:.
+         ============================================================ -->
     <footer>
         <div class="container footer-inner">
             <p>&copy; 2026 Tech Connect Alberta · Powered by AMG Foundation</p>
@@ -741,6 +779,8 @@
         </div>
     </footer>
 
+    <!-- Load our JavaScript last so the whole page exists before the script runs.
+         "defer" means it waits for the HTML to finish parsing before executing. -->
     <script src="./script.js" defer></script>
 </body>
 </html>
